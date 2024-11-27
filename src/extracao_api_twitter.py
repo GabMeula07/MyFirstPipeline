@@ -19,8 +19,8 @@ data = response.json()
 print(json.dumps(data, indent=4, sort_keys=True))
 
 # paginate
-while "next_token" in data.get("meta",{}):
-    next_token = data['meta']['next_token']
+while "next_token" in data.get("meta", {}):
+    next_token = data["meta"]["next_token"]
     url = f"{url_raw}&next_token={next_token}"
     response = requests.get(url=url)
     data = response.json()
